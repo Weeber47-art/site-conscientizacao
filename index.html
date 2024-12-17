@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carregando...</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background-color: #000;
+            color: #fff;
+            text-align: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+        .loading {
+            font-size: 1.5rem;
+            font-weight: bold;
+            animation: blink 1s infinite;
+        }
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0.5; }
+            100% { opacity: 1; }
+        }
+        .alert-message {
+            display: none;
+            font-size: 1.5rem;
+            color: red;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Tela inicial de "carregando..." -->
+    <div id="loading-screen">
+        <p class="loading">Carregando...</p>
+        <p>Seus dados foram salvos em nosso banco de dados, incluindo suas senhas.</p>
+    </div>
+
+    <!-- Mensagem final de conscientização -->
+    <div id="alert-message" class="alert-message">
+        ⚠️ <strong>ATENÇÃO!</strong> Não clique em links desconhecidos, mesmo se enviados por amigos ou familiares.<br>
+        Este é um exemplo para mostrar como links podem ser perigosos!
+    </div>
+
+    <script>
+        // Mostra a mensagem de alerta após 3 segundos
+        setTimeout(function() {
+            document.getElementById('loading-screen').style.display = 'none';
+            document.getElementById('alert-message').style.display = 'block';
+        }, 3000); // 3 segundos
+    </script>
+</body>
+</html>
